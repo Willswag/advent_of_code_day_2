@@ -1,3 +1,7 @@
+use std::fs::File;
+use std::io::prelude::*;
+use std::path::Path;
+
 fn main() {
     let path = Path::new("input.txt");
     let display = path.display();
@@ -9,5 +13,11 @@ fn main() {
     let mut s = String::new();
     match file.read_to_string(&mut s) {
         Err(why)=> panic!("could read {}: {}",display,why),
-        Ok(_)=> print!("contains:data\n" ),
-    }}
+        Ok(_)=> print!("contains:data\n{}" ,s),
+    }
+    
+
+
+}
+
+
